@@ -36,6 +36,11 @@ const productSchema = new Schema({
     photo: {
         type: String
     },
+    seller: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Seller',
+        required: true
+    },
     shipping: {
         type: Boolean
     }
