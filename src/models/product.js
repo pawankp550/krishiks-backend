@@ -20,6 +20,12 @@ const productSchema = new Schema({
         maxlength: 32,
         trim: true
     },
+    sale_price: {
+        type: Number,
+        required: true,
+        maxlength: 32,
+        trim: true
+    },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
