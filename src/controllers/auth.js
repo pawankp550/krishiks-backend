@@ -9,7 +9,9 @@ exports.signup = async (req, res) => {
         res.status(201).send(publicProfile)
     }
     catch (e) {
-        res.status(409).json({error: e})
+        res.status(409).json({
+            error: errorHandler(e)
+        })
     }
 }
 
@@ -21,7 +23,9 @@ exports.signin = async (req, res) => {
         res.cookie('tkn', token, { expire: new Date() + 9999 })
         res.status(200).send({ publicProfile, token })
     } catch (e) {
-        res.status(404).json({error: e})
+        res.status(404).json({
+            error: errorHandler(e)
+        })
     }
 }
 
