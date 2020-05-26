@@ -8,7 +8,7 @@ exports.create = async (req, res) => {
         const savedCategory = await category.save()
         res.status(201).send(savedCategory)
     } catch (err) {
-        res.status(400).json({
+        res.status(409).json({
                 error: errorHandler(err)
             });
     }
