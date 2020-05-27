@@ -6,6 +6,7 @@ const sellerSchema = new Schema({
         type: String,
         required: true,
         maxlength: 32,
+        unique: true,
         trim: true
     },
     description: {
@@ -16,10 +17,12 @@ const sellerSchema = new Schema({
     },
     address: {
         type: String,
+        required: true,
         trim: true
     },
     phone: {
         type: Number,
+        required: true,
         trim: true
     }
 },
