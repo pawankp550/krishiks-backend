@@ -1,5 +1,5 @@
 const Router = require('express').Router()
-const { create, getSellerById, updateSeller, deleteSeller, getCategories } = require('../controllers/seller')
+const { create, getSellerById, updateSeller, deleteSeller, getSellers } = require('../controllers/seller')
 const { isAdmin } = require('../middleware/authorization')
 const auth = require('../middleware/auth')
 
@@ -11,6 +11,6 @@ Router.put('/seller/:id', auth, isAdmin, updateSeller)
 
 Router.delete('/seller/:id', auth, isAdmin, deleteSeller)
 
-Router.get('/sellers', getCategories)
+Router.get('/sellers', getSellers)
 
 module.exports = Router
