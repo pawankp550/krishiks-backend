@@ -22,7 +22,6 @@ const productSchema = new Schema({
     },
     sale_price: {
         type: Number,
-        required: true,
         maxlength: 32,
         trim: true
     },
