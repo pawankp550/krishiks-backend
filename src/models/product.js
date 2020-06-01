@@ -5,13 +5,18 @@ const productSchema = new Schema({
     name: {
         type: String,
         required: true,
-        maxlength: 32,
+        maxlength: 50,
         trim: true
     },
     description: {
         type: String,
         required: true,
         maxlength: 2000,
+        trim: true
+    },
+    size: {
+        type: String,
+        maxlength: 32,
         trim: true
     },
     price: {
