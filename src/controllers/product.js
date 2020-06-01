@@ -143,7 +143,7 @@ exports.listProducts =  async (req, res) => {
         const sortBy = req.query.sortBy ? req.query.sortBy : 'sold'
         const limit = req.query.limit ? parseInt(req.query.limit) : 10
 
-        const products = await Product.find().populate("category").limit(limit).sort([[sortBy, sortType]]).exec()
+        const products = await Product.find().populate("category seller").limit(limit).sort([[sortBy, sortType]]).exec()
 
         if (!products) {
             return res.status(404).json({
@@ -228,7 +228,7 @@ exports.listBySearch = async (req, res) => {
             }
     }
     const products = await Product.find(findArgs)
-        .populate("category")
+        .populate("category seller")
         .sort([[sortBy, order]])
         .skip(skip)
         .limit(limit)
