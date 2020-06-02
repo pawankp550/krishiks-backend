@@ -6,7 +6,7 @@ const {
     listProducts, 
     listRelatedProducts, 
     listCategories, 
-    listBySearch,
+    listByFilter,
     listSearched,
     updateProductImageById 
 } = require('../controllers/product')
@@ -39,13 +39,13 @@ Router.patch('/product/image/:id', auth, isAdmin, upload.single('imageData'), up
 })
 
 // get products
-Router.get('/product', listProducts)
+Router.get('/products', listProducts)
 
 // get relatedItems
-Router.get('/product/related/:id', listRelatedProducts)
+Router.get('/products/related/:id', listRelatedProducts)
 
 // get by filter
-Router.post("/products/by/search", listBySearch)
+Router.post("/products/by/filter", listByFilter)
 
 // get by search
 Router.get("/products/search", listSearched)

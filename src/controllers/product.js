@@ -203,11 +203,11 @@ exports.listCategories = async (req, res) => {
 }
 
 
-exports.listBySearch = async (req, res) => {
-    let order = req.body.order ? req.body.order : "desc";
-    let sortBy = req.body.sortBy ? req.body.sortBy : "_id";
-    let limit = req.body.limit ? parseInt(req.body.limit) : 100;
-    let skip = parseInt(req.body.skip);
+exports.listByFilter = async (req, res) => {
+    let order = req.query.order ? req.query.order : "desc";
+    let sortBy = req.query.sortby ? req.query.sortby : "_id";
+    let limit = req.query.limit ? parseInt(req.query.limit) : 100;
+    let skip = parseInt(req.query.skip);
     let findArgs = {};
 
     // console.log(order, sortBy, limit, skip, req.body.filters);
